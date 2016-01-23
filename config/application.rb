@@ -1,6 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'yelp'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -19,8 +20,15 @@ module Ourlunch
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-
+    # config.autoload_paths += %W(#{config.root}/lib)
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    Yelp.client.configure do |config|
+      config.consumer_key = "dj4_CiqwMZjHiwTFJB-5aA"
+      config.consumer_secret = "1bjZZIEUmvsm3e-Y63UU6kutZHQ"
+      config.token = "mpgKKAcHrHplTlHm8nQzqH_PemeU-4jn"
+      config.token_secret = "hG0IVAN0VfchR5q6aHQS1PzxQsE"
+    end
   end
 end
