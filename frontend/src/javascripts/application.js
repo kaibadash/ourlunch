@@ -10,7 +10,11 @@ var Restaurant = React.createClass({
         <div className="restaurant">
           <a href="TODO"><img src={this.props.restaurant.image_url} /></a>
           <div><a href="TODO">{this.props.restaurant.name}</a></div>
-          <div>評価:{this.props.restaurant.point} <a href={"https://www.google.co.jp/maps/@" + this.props.restaurant.lat +".@"+ this.props.restaurant.lon}>map</a></div>
+          <div>評価:{this.props.restaurant.point} &nbsp;
+              <a href={"https://www.google.co.jp/maps/@" + this.props.restaurant.lat +".@"+ this.props.restaurant.lon}>
+                <i className="fa fa-2x fa-map-marker"></i>
+              </a>
+          </div>
         </div>
     );
   }
