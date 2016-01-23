@@ -8,6 +8,9 @@ class CreateRestaurants < ActiveRecord::Migration
       t.string :tel
       t.float :lat
       t.float :lon
+      t.float :point
+      t.string :url
+      t.string :image_url
 
       t.timestamps null: false
     end
