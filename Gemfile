@@ -55,4 +55,4 @@ group :development do
 end
 
 gem 'yelp', require: 'yelp'
-
+gem 'slim-rails'

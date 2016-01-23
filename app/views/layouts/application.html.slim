@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title
+      | Our Lunch
+    = stylesheet_link_tag    'application', media: 'all'
+    = csrf_meta_tags
+  body
+
+    h1
+      | Our Lunch
+    p
+      | Our Lunch kuso warota www
+
+    #content
+
+    // TODO:これは削除予定
+    == yield
+
+    = javascript_include_tag 'application'
+
