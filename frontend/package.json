@@ -1,24 +1,16 @@
 {
   "name": "ourlunch",
   "version": "1.0.0",
-  "description": "",
+  "description": "Our lunch is beautiful!!",
   "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
+    "release": "webpack --config config/production/webpack.config.js",
+    "build": "webpack --config config/development/webpack.config.js",
+    "watch": "webpack --watch --config config/development/webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kaibadash/ourlunch.git"
-  },
   "author": "muramurasan",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kaibadash/ourlunch/issues"
-  },
-  "homepage": "https://github.com/kaibadash/ourlunch#readme",
+  "license": "MIT",
   "devDependencies": {
     "babel": "^6.3.26",
     "babel-core": "^6.4.5",
