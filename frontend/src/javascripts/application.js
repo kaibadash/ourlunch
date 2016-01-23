@@ -8,10 +8,13 @@ var Restaurant = React.createClass({
   render: function() {
     return (
         <div className="restaurant">
-          <h2 className="restaurantAuthor">
-            {this.props.name}
-          </h2>
-          {this.props.children}
+          <a href="TODO"><img src={this.props.restaurant.image_url} /></a>
+          <div><a href="TODO">{this.props.restaurant.name}</a></div>
+          <div>評価:{this.props.restaurant.point} &nbsp;
+              <a href={"https://www.google.co.jp/maps/@" + this.props.restaurant.lat +".@"+ this.props.restaurant.lon}>
+                <i className="fa fa-2x fa-map-marker"></i>
+              </a>
+          </div>
         </div>
     );
   }
@@ -41,7 +44,6 @@ var RestaurantBox = React.createClass({
   render: function() {
     return (
         <div className="restaurantBox">
-          <h1>Restaurants</h1>
           <RestaurantList data={this.state.data} />
         </div>
     );
@@ -52,7 +54,7 @@ var RestaurantList = React.createClass({
   render: function() {
     var restaurantNodes = this.props.data.map(function(restaurant) {
       return (
-          <Restaurant name={restaurant.name} key={restaurant.id}>
+          <Restaurant restaurant={restaurant} key={restaurant.id}>
             {restaurant.name}
           </Restaurant>
       );

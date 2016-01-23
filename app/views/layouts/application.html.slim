@@ -3,19 +3,15 @@ html
   head
     title
       | Our Lunch
-    = stylesheet_link_tag    'application', media: 'all'
+    = stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'
+    = stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'
+    = stylesheet_link_tag 'application', media: 'all'
     = csrf_meta_tags
   body
 
     h1
       | Our Lunch
-    p
-      | Our Lunch kuso warota www
 
     #content
 
-    // TODO:これは削除予定
-    == yield
-
     = javascript_include_tag 'application'
-
