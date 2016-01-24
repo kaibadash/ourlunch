@@ -10,7 +10,6 @@ module Tasks
           restaurants = Restaurant.all
           f.each_line do |line|
             rest_name = line.chomp
-            # TODO:ここでwhereを書くと、登録されている店舗分の回数SQLが流れる？確認。
             Restaurant.create(name: rest_name) if restaurants.where(name: rest_name).blank?
           end
         end
