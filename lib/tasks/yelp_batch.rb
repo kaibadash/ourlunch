@@ -7,10 +7,11 @@ module Tasks
     class << self
       def create_restaurants
         File.open('data/restaurant_name.txt', 'r:utf-8') do |f|
+          restaurants = Restaurant.all
           f.each_line do |line|
-            # TODO:ifの条件問い合わせをmodelのscopeに移動
-            p if Restaurant.where(name: line.chomp).blank?
-            #puts line if Restaurant.where(name: line.chomp).presents?
+            rest_name = line.chomp
+            # TODO:ここでwhereを書くと、登録されている店舗分の回数SQLが流れる？確認。
+            Restaurant.create(name: rest_name) if restaurants.where(name: rest_name).blank?
           end
         end
       end
@@ -19,7 +20,7 @@ module Tasks
         restaurants = Restaurant.all
         restaurants.each do |rest|
           yelp = yelp_result(rest)
-          next yelp.present?
+          next if yelp.blank?
           update_restaurant(rest, yelp)
           sleep(INTERVAL_YELP_ACCESS_TIME) # yelpのAPIを繰り返し叩くのにインターバルを持たせる.
         end
