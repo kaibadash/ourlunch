@@ -3,6 +3,7 @@ require 'yelp'
 module Tasks
   class YelpBatch
     LOCATION = "渋谷"
+    INTERVAL_YELP_ACCESS_TIME = 3
     class << self
       def get_all_restaurants
         restaurants = Restaurant.all
@@ -11,6 +12,7 @@ module Tasks
           yelp_result = Yelp.client.search(LOCATION, params).businesses.first
           next yelp_result.present?
           update_restaurant(rest, yelp_result)
+          sleep(INTERVAL_YELP_ACCESS_TIME) # yelpのAPIを繰り返し叩くのにインターバルを持たせる.
         end
       end
 
