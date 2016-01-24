@@ -8,14 +8,4 @@ html
     = stylesheet_link_tag 'application', media: 'all'
     = csrf_meta_tags
   body
-
-    h1
-      | Our Lunch
-
-    #content
-
-    = javascript_include_tag 'http://maps.google.com/maps/api/js'
-    = javascript_include_tag 'https://raw.githubusercontent.com/hpneo/gmaps/master/gmaps.min.js'
-    = javascript_include_tag 'application'
-
-
+   = yield
