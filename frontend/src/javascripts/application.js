@@ -8,8 +8,9 @@ var Restaurant = React.createClass({
     render: function () {
         return (
             <div className="restaurant">
-                <a onClick={this.handleClick}>
-                    <img src={this.props.restaurant.image_url ? this.props.restaurant.image_url : "http://dummyimage.com/100x100/000000/ffffff&text=NO+IMAGE"}/></a>
+                <a href="#" onClick={this.handleClick}>
+                    <img src={this.props.restaurant.image_url ? this.props.restaurant.image_url : "http://dummyimage.com/100x100/000000/ffffff&text=NO+IMAGE"}/>
+                </a>
                 <div><a href={this.props.restaurant.url}>{this.props.restaurant.name}</a></div>
                 <div>評価:{this.props.restaurant.point} &nbsp;
                     <a href={"https://www.google.co.jp/maps/?q=" + this.props.restaurant.lat +","+ this.props.restaurant.lon + "+(here)"}>

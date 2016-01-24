@@ -2,18 +2,38 @@
 body {
     padding: 10px;
 }
+
+h1 {
+    color: #fff;
+    text-shadow: 0 0 10px #fff,0 0 15px #fff;
+    padding: 10px 10px 30px 10px;
+    font-size: 5em;
+}
+
 a {
-    color: #fdd;
+    color: #f11;
 }
 
 #map {
     width: 400px;
     height: 400px;
+    top: 10px;
+    right: 20px;
+    position: fixed !important;
+    z-index: 999;
+    background-color: #4e5d6c;
+    -webkit-box-shadow:rgba(222, 222, 222, 0.3) 0px 0px 2px 2px;
+    -moz-box-shadow:rgba(113, 135, 164, 0.3) 0px 0px 2px 2px
 }
 
 .restaurant {
-    background-color: #366;
+    border-color: #555;
+    border-style: solid;
+    border-width: thin;
     border-radius: 2px;
-    margin: 5px;
+    margin: 15px;
     padding: 5px;
+    -webkit-box-shadow:rgba(222, 222, 222, 0.3) 0px 0px 3px 3px;
+    -moz-box-shadow:rgba(113, 135, 164, 0.3) 0px 0px 3px 3px;
 }
+
