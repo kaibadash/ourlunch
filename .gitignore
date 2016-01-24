@@ -20,7 +20,7 @@
 node_modules/
 
 !/app/assets/javascripts/.keep
-/app/assets/javascripts
+# /app/assets/javascripts
 
 .idea
 *.log
